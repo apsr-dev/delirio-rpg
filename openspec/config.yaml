@@ -1,0 +1,31 @@
+schema: spec-driven
+
+context: |
+  Delirio RPG is a Telegram RPG bot built with Bun, TypeScript, grammY,
+  Supabase Postgres, and Vercel Functions.
+
+  Production uses Telegram webhooks, not long polling. Supabase stores players,
+  characters, wallets, orders, and game state. Pix payments are handled by an
+  external payment provider and confirmed through a server-side webhook before
+  any in-game coins are granted.
+
+  The project is publicly visible but proprietary. Do not introduce open source
+  licensing language that grants copying, modification, distribution, hosting,
+  or derivative works.
+
+rules:
+  proposal:
+    - Explain user-facing behavior, not only implementation details.
+    - Call out IP, payment, or abuse risks when relevant.
+    - Include migration or rollback notes for database changes.
+  specs:
+    - Use MUST or SHALL for normative requirements.
+    - Use Given/When/Then scenarios for observable behavior.
+    - Keep digital purchases idempotent and auditable.
+  design:
+    - Prefer webhook-first architecture for Telegram integrations.
+    - Keep provider-specific payment logic behind an internal adapter.
+    - Use Supabase service-role credentials only in server-side code.
+  tasks:
+    - Include validation steps for bot commands, webhooks, and database changes.
+    - Separate implementation, migration, and documentation tasks.

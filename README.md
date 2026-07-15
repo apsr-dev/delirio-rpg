@@ -9,6 +9,7 @@ Delirio RPG is a Telegram RPG bot built with Bun, TypeScript, grammY, Supabase, 
 - grammY for Telegram Bot API integration
 - Supabase Postgres for players, characters, inventory, orders, and game state
 - Vercel Functions for webhook-based deployment
+- OpenSpec for spec-driven development
 
 ## Architecture
 
@@ -27,6 +28,37 @@ flowchart LR
 Telegram sends updates to `POST /api/bot`. The function validates the Telegram webhook secret, lets grammY process the update, and uses Supabase for persistent state.
 
 See [docs/architecture.md](./docs/architecture.md) for the webhook, dev/prod bot, and Pix payment architecture.
+
+## OpenSpec
+
+This project uses OpenSpec as the source of truth for product and system behavior.
+
+Baseline specs live in:
+
+```txt
+openspec/specs/
+```
+
+Useful commands after installing the OpenSpec CLI:
+
+```bash
+npm install -g @fission-ai/openspec@latest
+bun run openspec:list
+bun run openspec:validate
+bun run openspec:view
+```
+
+Before implementing meaningful features, create an OpenSpec change under:
+
+```txt
+openspec/changes/<change-name>/
+```
+
+The usual flow is:
+
+```txt
+proposal.md -> specs -> design.md -> tasks.md -> implementation -> archive
+```
 
 ## Local Setup
 

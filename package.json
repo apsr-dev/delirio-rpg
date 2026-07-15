@@ -7,6 +7,9 @@
   "scripts": {
     "dev": "vercel dev",
     "typecheck": "tsc --noEmit",
+    "openspec:list": "openspec list",
+    "openspec:validate": "openspec validate --all",
+    "openspec:view": "openspec view",
     "set-webhook": "bun run scripts/set-webhook.ts",
     "delete-webhook": "bun run scripts/delete-webhook.ts"
   },
