@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
     "typecheck": "tsc --noEmit",
     "openspec:list": "openspec list",
     "openspec:validate": "openspec validate --all",
@@ -18,6 +20,7 @@
     "grammy": "^1.36.3"
   },
   "devDependencies": {
+    "@types/bun": "^1.2.18",
     "@types/node": "^24.0.0",
     "typescript": "^5.8.3",
     "vercel": "^44.7.2"

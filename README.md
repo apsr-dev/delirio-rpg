@@ -60,6 +60,17 @@ The usual flow is:
 proposal.md -> specs -> design.md -> tasks.md -> implementation -> archive
 ```
 
+## Testing
+
+Unit tests use Bun's built-in test runner:
+
+```bash
+bun test
+bun test --watch
+```
+
+Test files should use the `*.test.ts` convention and import test helpers from `bun:test`.
+
 ## Local Setup
 
 1. Install dependencies:

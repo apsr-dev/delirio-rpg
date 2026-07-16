@@ -45,3 +45,17 @@ The repository SHALL remain publicly visible without granting open source reuse 
 - WHEN they inspect the license
 - THEN the license states all rights are reserved
 - AND copying, modification, distribution, hosting, or derivative works require written permission
+
+### Requirement: Bun Test Runner
+The system MUST use `bun test` for automated unit tests.
+
+#### Scenario: Unit test execution
+- GIVEN project dependencies are installed with Bun
+- WHEN a developer runs `bun test`
+- THEN all unit tests matching Bun's test file conventions are executed
+
+#### Scenario: New unit tests
+- GIVEN a developer adds test coverage
+- WHEN the test file is created
+- THEN the file uses the `*.test.ts` convention
+- AND imports test helpers from `bun:test`

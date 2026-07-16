@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": ["node"]
+    "types": ["node", "bun-types"]
   },
-  "include": ["api/**/*.ts", "scripts/**/*.ts", "src/**/*.ts"]
+  "include": ["api/**/*.ts", "scripts/**/*.ts", "src/**/*.ts", "tests/**/*.ts"]
 }
