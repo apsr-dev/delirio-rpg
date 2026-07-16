@@ -2,6 +2,7 @@
 .env.*
 !.env.example
 .vercel
+Bots.md
 node_modules
 bun.lock
 dist

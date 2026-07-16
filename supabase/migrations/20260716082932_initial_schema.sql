@@ -67,3 +67,11 @@ create table if not exists public.payment_events (
   received_at timestamptz not null default now(),
   unique (provider, provider_event_id)
 );
+
+alter table public.players enable row level security;
+alter table public.characters enable row level security;
+alter table public.coin_packages enable row level security;
+alter table public.wallets enable row level security;
+alter table public.orders enable row level security;
+alter table public.wallet_ledger enable row level security;
+alter table public.payment_events enable row level security;
