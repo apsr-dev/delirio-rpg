@@ -4,7 +4,7 @@ Delirio RPG is a Telegram RPG bot built with Bun, TypeScript, grammY, Supabase, 
 
 ## Stack
 
-- Bun for local TypeScript scripts and package management
+- Bun 1.4.3 for local TypeScript scripts and package management
 - TypeScript for bot and game logic
 - grammY for Telegram Bot API integration
 - Supabase Postgres for players, characters, inventory, orders, and game state
@@ -62,21 +62,58 @@ proposal.md -> specs -> design.md -> tasks.md -> implementation -> archive
 
 ## Testing
 
-Unit tests use Bun's built-in test runner:
+Tests use Bun's built-in test runner. Database tests replay every migration in
+PGlite (embedded PostgreSQL), including account uniqueness and server-only access.
+Bot tests send grammY updates through the real player service and a controlled
+Supabase Data API boundary; Telegram API calls are stubbed. No live credentials
+or Docker installation are needed. The controlled adapter does not replace
+verification against hosted Supabase and Telegram.
 
 ```bash
 bun test
 bun test --watch
+bun run typecheck
 ```
 
 Test files should use the `*.test.ts` convention and import test helpers from `bun:test`.
 
+CI installs from the committed `bun.lock` and runs type checking and the test suite
+with the version in `.bun-version`.
+
+## First Access
+
+Use a private conversation with the bot:
+
+- `/start` saves or refreshes your Telegram account and opens the initial menu.
+- `/perfil` shows your Telegram name, optional username, and registration date
+  (pt-BR, UTC). It also works before `/start`.
+- `/ajuda` lists the available commands and works even if the database is down.
+
+The menu contains **Meu perfil** and **Ajuda**. Buttons continue working across
+serverless invocations. Repeating a command keeps the same account and registration
+date; Telegram profile changes are saved on the next menu or profile access.
+Group requests direct the user to the private conversation without saving or
+exposing account data. A failed database operation gives a retry instruction and
+does not report successful registration.
+
+See [docs/onboarding.md](./docs/onboarding.md) for migration, deployment, smoke-test,
+and rollback instructions.
+
 ## Local Setup
+
+Use Bun 1.4.3, pinned in `.bun-version` and `package.json`. To install this version:
+
+```bash
+curl -fsSL https://bun.sh/install | bash -s "bun-v1.4.3"
+bun --version
+```
+
+Vercel uses the `1.4.x` runtime configured in `vercel.json`; Vercel manages the patch version automatically and does not support pinning an exact patch.
 
 1. Install dependencies:
 
    ```bash
-   bun install
+   bun install --frozen-lockfile
    ```
 
 2. Create a Telegram bot in `@BotFather`.

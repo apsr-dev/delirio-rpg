@@ -4,6 +4,7 @@
   "private": true,
   "description": "Delirio RPG Telegram bot built with Bun, TypeScript, grammY, Supabase, and Vercel webhooks.",
   "type": "module",
+  "packageManager": "bun@1.4.3",
   "scripts": {
     "dev": "vercel dev",
     "test": "bun test",
@@ -20,12 +21,14 @@
     "grammy": "^1.36.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.18",
+    "@electric-sql/pglite": "0.5.10",
+    "@types/bun": "^1.4.3",
     "@types/node": "^24.0.0",
     "typescript": "6",
     "vercel": "^56.2.1"
   },
   "engines": {
+    "bun": "1.4.3",
     "node": ">=20"
   }
 }

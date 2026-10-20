@@ -4,7 +4,7 @@
 .vercel
 Bots.md
 node_modules
-bun.lock
+supabase/.temp
 dist
 coverage
 .DS_Store
