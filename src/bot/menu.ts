@@ -5,5 +5,6 @@ export function initialMenu() {
     .text("Meu perfil", "onboarding:profile")
     .text("Ajuda", "onboarding:help")
     .row()
-    .text("Povos de Oniri", "peoples:list");
+    .text("Povos de Oniri", "peoples:list")
+    .text("Essências", "essences:list");
 }
