@@ -43,7 +43,7 @@ Use the separate development bot and the environment setup in the README:
    the source document. Check Vahr’Uk's extra reaction cost and the Human's two
    professions as well as the other three powers.
 3. Navigate back to the list, open another people, and return to Menu inicial.
-   Verify Meu perfil, Ajuda, and Povos de Oniri remain available.
+   Verify Meu perfil, Ajuda, Povos de Oniri, and Essências remain available.
 4. Start a fresh function invocation and click a previously sent guide button.
    Confirm navigation still works and the callback loading indicator clears.
 5. Verify `/ajuda` includes `/povos`, and `/start` and `/perfil` still work as

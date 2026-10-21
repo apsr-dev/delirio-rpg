@@ -90,8 +90,10 @@ Use a private conversation with the bot:
 - `/ajuda` lists the available commands and works even if the database is down.
 - `/povos` opens the read-only guide to the five peoples of Oniri, without requiring
   registration or database access.
+- `/essencias` explains the eight Essences, their elements, and their Echoes without
+  registration or database access.
 
-The menu contains **Meu perfil**, **Ajuda**, and **Povos de Oniri**. Buttons continue
+The menu contains **Meu perfil**, **Ajuda**, **Povos de Oniri**, and **Essências**. Buttons continue
 working across serverless invocations. Repeating a command keeps the same account and registration
 date; Telegram profile changes are saved on the next menu or profile access.
 Group requests direct the user to the private conversation without saving or
@@ -114,6 +116,23 @@ Unknown guide actions offer a recovery path, and earlier menus continue working
 after a new function invocation.
 
 See [docs/peoples-guide.md](./docs/peoples-guide.md) for the content source,
+development-bot checks, and rollback instructions.
+
+## Essences
+
+Send `/essencias` or choose **Essências** to browse Êxtase, Melancolia, Serenidade,
+Cólera, Confiança, Dissimulação, Altruísmo, and Egoísmo. Each page shows the full
+description, Sonho/Pesadelo origin, primary element, three secondary elements,
+and the named Echo with its complete effect.
+
+The introduction explains the base point-gain chance, readiness at five points,
+the five-point cap, retention between combats, and use without ending the turn
+or preventing a Reaction. **Voltar às Essências** returns to the list;
+**Menu inicial** returns to the shared menu without saving a registration.
+The guide is private, stateless, and available during database outages. It does
+not save Essence choices, accumulate points, or execute combat effects.
+
+See [docs/essences-guide.md](./docs/essences-guide.md) for source provenance,
 development-bot checks, and rollback instructions.
 
 ## Local Setup

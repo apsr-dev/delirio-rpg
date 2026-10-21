@@ -25,7 +25,10 @@ describe("Telegram onboarding", () => {
       inline_keyboard: [[
         { text: "Meu perfil", callback_data: "onboarding:profile" },
         { text: "Ajuda", callback_data: "onboarding:help" },
-      ], [{ text: "Povos de Oniri", callback_data: "peoples:list" }]],
+      ], [
+        { text: "Povos de Oniri", callback_data: "peoples:list" },
+        { text: "Essências", callback_data: "essences:list" },
+      ]],
     });
   });
 
@@ -79,6 +82,7 @@ describe("Telegram onboarding", () => {
       expect(reply.text).toContain("/perfil");
       expect(reply.text).toContain("/ajuda");
       expect(reply.text).toContain("/povos");
+      expect(reply.text).toContain("/essencias");
       expect(reply.text).not.toMatch(/rolar|ficha|loja/);
     }
     expect(calls.some((call) => call.method === "answerCallbackQuery")).toBe(true);

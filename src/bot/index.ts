@@ -2,6 +2,7 @@ import { Bot, type BotConfig, type Context } from "grammy";
 import type { Player, PlayerService } from "../players/types.js";
 import { initialMenu } from "./menu.js";
 import { registerPeoplesGuide } from "./peoples.js";
+import { registerEssencesGuide } from "./essences.js";
 
 type BotOptions = {
   token: string;
@@ -16,6 +17,7 @@ const HELP = [
   "/perfil — consultar seu perfil",
   "/ajuda — ver os comandos disponíveis",
   "/povos — conhecer os povos de Oniri",
+  "/essencias — conhecer as Essências e seus Ecos",
 ].join("\n");
 
 function formatProfile(player: Player) {
@@ -82,6 +84,7 @@ export function createBot({ token, players, botInfo }: BotOptions) {
   });
 
   registerPeoplesGuide(bot);
+  registerEssencesGuide(bot);
 
   return bot;
 }
