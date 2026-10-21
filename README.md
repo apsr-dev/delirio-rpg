@@ -88,9 +88,11 @@ Use a private conversation with the bot:
 - `/perfil` shows your Telegram name, optional username, and registration date
   (pt-BR, UTC). It also works before `/start`.
 - `/ajuda` lists the available commands and works even if the database is down.
+- `/povos` opens the read-only guide to the five peoples of Oniri, without requiring
+  registration or database access.
 
-The menu contains **Meu perfil** and **Ajuda**. Buttons continue working across
-serverless invocations. Repeating a command keeps the same account and registration
+The menu contains **Meu perfil**, **Ajuda**, and **Povos de Oniri**. Buttons continue
+working across serverless invocations. Repeating a command keeps the same account and registration
 date; Telegram profile changes are saved on the next menu or profile access.
 Group requests direct the user to the private conversation without saving or
 exposing account data. A failed database operation gives a retry instruction and
@@ -98,6 +100,21 @@ does not report successful registration.
 
 See [docs/onboarding.md](./docs/onboarding.md) for migration, deployment, smoke-test,
 and rollback instructions.
+
+## Peoples of Oniri
+
+Send `/povos` or choose **Povos de Oniri** from the menu to browse Aetheri, Shaqyr,
+Uklith, Vahr’Uk, and Humano. Each page includes the people's history, named power,
+power description, and Energy bonuses. **Voltar aos povos** returns to the list;
+**Menu inicial** returns to the main menu without saving a registration.
+
+The guide is available in private conversations and remains usable during a
+database outage. Browsing does not create a character or save a selection.
+Unknown guide actions offer a recovery path, and earlier menus continue working
+after a new function invocation.
+
+See [docs/peoples-guide.md](./docs/peoples-guide.md) for the content source,
+development-bot checks, and rollback instructions.
 
 ## Local Setup
 

@@ -1,5 +1,7 @@
-import { Bot, InlineKeyboard, type BotConfig, type Context } from "grammy";
+import { Bot, type BotConfig, type Context } from "grammy";
 import type { Player, PlayerService } from "../players/types.js";
+import { initialMenu } from "./menu.js";
+import { registerPeoplesGuide } from "./peoples.js";
 
 type BotOptions = {
   token: string;
@@ -13,13 +15,8 @@ const HELP = [
   "/start — abrir o menu inicial",
   "/perfil — consultar seu perfil",
   "/ajuda — ver os comandos disponíveis",
+  "/povos — conhecer os povos de Oniri",
 ].join("\n");
-
-function menu() {
-  return new InlineKeyboard()
-    .text("Meu perfil", "onboarding:profile")
-    .text("Ajuda", "onboarding:help");
-}
 
 function formatProfile(player: Player) {
   const name = [player.first_name, player.last_name].filter(Boolean).join(" ");
@@ -59,7 +56,7 @@ export function createBot({ token, players, botInfo }: BotOptions) {
       screen === "profile"
         ? formatProfile(player)
         : "Bem-vindo ao Delírio RPG!\n\nSeu cadastro está salvo. Escolha uma opção abaixo.",
-      { reply_markup: menu() },
+      { reply_markup: initialMenu() },
     );
   }
 
@@ -68,7 +65,7 @@ export function createBot({ token, players, botInfo }: BotOptions) {
       await ctx.reply("Para acessar o bot, converse comigo no privado e envie /start.");
       return;
     }
-    await ctx.reply(HELP, { reply_markup: menu() });
+    await ctx.reply(HELP, { reply_markup: initialMenu() });
   }
 
   bot.command("start", (ctx) => showAccount(ctx, "start"));
@@ -83,6 +80,8 @@ export function createBot({ token, players, botInfo }: BotOptions) {
     await ctx.answerCallbackQuery();
     await showHelp(ctx);
   });
+
+  registerPeoplesGuide(bot);
 
   return bot;
 }
