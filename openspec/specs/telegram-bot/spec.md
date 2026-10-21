@@ -40,7 +40,7 @@ The system MUST persist a player account before acknowledging registration on `/
 - GIVEN a Telegram user has no account
 - WHEN the user sends `/start` in private
 - THEN the system saves the account using the Telegram user id
-- AND replies with a menu containing Meu perfil and Ajuda
+- AND replies with a menu containing Meu perfil, Ajuda, and Povos de Oniri
 
 #### Scenario: Existing user starts the bot again
 - GIVEN an account exists for the Telegram user
@@ -91,7 +91,7 @@ The system MUST support `/ajuda` and the Ajuda button without database access an
 #### Scenario: Help during database outage
 - GIVEN the database is unavailable
 - WHEN the user sends `/ajuda` or clicks Ajuda
-- THEN the bot lists `/start`, `/perfil`, and `/ajuda`
+- THEN the bot lists `/start`, `/perfil`, `/ajuda`, and `/povos`
 - AND does not list removed diagnostic or unfinished commands
 
 ### Requirement: Recoverable Registration Failure
