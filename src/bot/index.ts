@@ -4,6 +4,7 @@ import { initialMenu } from "./menu.js";
 import { registerPeoplesGuide } from "./peoples.js";
 import { registerEssencesGuide } from "./essences.js";
 import { registerPrismsGuide } from "./prisms.js";
+import { registerTrailsGuide } from "./trails.js";
 
 type BotOptions = {
   token: string;
@@ -20,6 +21,7 @@ const HELP = [
   "/povos — conhecer os povos de Oniri",
   "/essencias — conhecer as Essências e seus Ecos",
   "/prismas — conhecer os Prismas e seus benefícios",
+  "/trilhas — conhecer as Trilhas e seus poderes iniciais",
 ].join("\n");
 
 function formatProfile(player: Player) {
@@ -88,6 +90,7 @@ export function createBot({ token, players, botInfo }: BotOptions) {
   registerPeoplesGuide(bot);
   registerEssencesGuide(bot);
   registerPrismsGuide(bot);
+  registerTrailsGuide(bot);
 
   return bot;
 }

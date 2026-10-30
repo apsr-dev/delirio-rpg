@@ -94,8 +94,11 @@ Use a private conversation with the bot:
   registration or database access.
 - `/prismas` explains the three Prisms, their linked Energies, and all their benefits
   without registration or database access.
+- `/trilhas` groups the nine Trails by role and shows their 18 initial powers,
+  without registration or database access.
 
-The menu contains **Meu perfil**, **Ajuda**, **Povos de Oniri**, **Essências**, and **Prismas**. Buttons continue
+The menu contains **Meu perfil**, **Ajuda**, **Povos de Oniri**, **Essências**,
+**Prismas**, and **Trilhas**. Buttons continue
 working across serverless invocations. Repeating a command keeps the same account and registration
 date; Telegram profile changes are saved on the next menu or profile access.
 Group requests direct the user to the private conversation without saving or
@@ -153,6 +156,22 @@ The guide is private, stateless, and usable during database outages. It does not
 bind schools, learn powers, recommend builds, or execute Prism benefits. See
 [docs/prisms-guide.md](./docs/prisms-guide.md) for source provenance, development-bot
 checks, and rollback instructions.
+
+## Trails
+
+Send `/trilhas` or choose **Trilhas** to browse Protetor, Ofensivo, or Suporte.
+Each role lists three Trails, one each for Corpo, Mente, and Espírito. Detail
+pages show both initial powers with their types, explicitly stated Energy costs,
+full effects, random alternatives, and limitations.
+
+The introduction explains the limit of three Trails (one per Energy) and the
+A/P/R/C legend. **Voltar à função** returns to the current role;
+**Todas as funções** returns to role selection; **Menu inicial** opens the shared
+menu without saving a registration. Browsing is private, stateless, and usable
+during database outages. It does not save choices or execute powers.
+
+See [docs/trails-guide.md](./docs/trails-guide.md) for source provenance, the power
+catalog, development-bot checks, and rollback instructions.
 
 ## Local Setup
 
