@@ -91,7 +91,7 @@ describe("Telegram peoples guide", () => {
           { text: "Povos de Oniri", callback_data: "peoples:list" },
           { text: "Essências", callback_data: "essences:list" },
         ],
-        [{ text: "Prismas", callback_data: "prisms:list" }],
+        [{ text: "Prismas", callback_data: "prisms:list" }, { text: "Trilhas", callback_data: "trails:list" }],
       ],
     });
     for (const instance of [command, first, back, second, menu]) {

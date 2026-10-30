@@ -8,5 +8,6 @@ export function initialMenu() {
     .text("Povos de Oniri", "peoples:list")
     .text("Essências", "essences:list")
     .row()
-    .text("Prismas", "prisms:list");
+    .text("Prismas", "prisms:list")
+    .text("Trilhas", "trails:list");
 }
