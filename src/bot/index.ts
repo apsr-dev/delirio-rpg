@@ -3,6 +3,7 @@ import type { Player, PlayerService } from "../players/types.js";
 import { initialMenu } from "./menu.js";
 import { registerPeoplesGuide } from "./peoples.js";
 import { registerEssencesGuide } from "./essences.js";
+import { registerPrismsGuide } from "./prisms.js";
 
 type BotOptions = {
   token: string;
@@ -18,6 +19,7 @@ const HELP = [
   "/ajuda — ver os comandos disponíveis",
   "/povos — conhecer os povos de Oniri",
   "/essencias — conhecer as Essências e seus Ecos",
+  "/prismas — conhecer os Prismas e seus benefícios",
 ].join("\n");
 
 function formatProfile(player: Player) {
@@ -85,6 +87,7 @@ export function createBot({ token, players, botInfo }: BotOptions) {
 
   registerPeoplesGuide(bot);
   registerEssencesGuide(bot);
+  registerPrismsGuide(bot);
 
   return bot;
 }

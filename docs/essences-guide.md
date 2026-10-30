@@ -37,7 +37,7 @@ apply effects, calculate combat, or create characters.
 Open `/essencias` or choose Essências in the private menu. Read the introduction,
 open any of the eight detail pages, and use Voltar às Essências or Menu inicial.
 The neutral menu return does not register an account or report registration
-success. The player can open either guide from this menu, even with the database
+success. The player can open any guide from this menu, even with the database
 unavailable. Account commands keep their existing persistence behavior.
 
 Group requests direct users to a private chat. Unknown or obsolete Essence
@@ -56,7 +56,7 @@ Use the separate development bot and the environment setup in the README:
    points, the five-point cap, discarded excess points, retention between combats,
    and use without ending the turn or blocking a Reaction.
 4. Return to the list, open another Essence, return to Menu inicial, and switch
-   between the Essences and Peoples guides. Verify existing menu entries remain.
+   between the available guides. Verify existing menu entries remain.
 5. Start a new function invocation, then click a previously sent guide button.
    Verify navigation works and the callback loading indicator clears.
 6. In isolated development, use an unavailable database. Verify the guide and its

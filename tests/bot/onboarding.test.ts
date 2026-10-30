@@ -28,7 +28,7 @@ describe("Telegram onboarding", () => {
       ], [
         { text: "Povos de Oniri", callback_data: "peoples:list" },
         { text: "Essências", callback_data: "essences:list" },
-      ]],
+      ], [{ text: "Prismas", callback_data: "prisms:list" }]],
     });
   });
 
@@ -83,6 +83,7 @@ describe("Telegram onboarding", () => {
       expect(reply.text).toContain("/ajuda");
       expect(reply.text).toContain("/povos");
       expect(reply.text).toContain("/essencias");
+      expect(reply.text).toContain("/prismas");
       expect(reply.text).not.toMatch(/rolar|ficha|loja/);
     }
     expect(calls.some((call) => call.method === "answerCallbackQuery")).toBe(true);
