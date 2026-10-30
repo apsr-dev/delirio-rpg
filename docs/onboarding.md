@@ -30,8 +30,8 @@ against a populated database. The complete history is exercised in the test suit
 2. Send `/start` twice. Confirm exactly one row exists for that Telegram user id
    and that its UUID and `created_at` remain unchanged.
 3. Click Meu perfil and Ajuda. Verify both callbacks complete and help lists
-   `/start`, `/perfil`, `/ajuda`, `/povos`, and `/essencias` only. The menu also offers
-   Povos de Oniri and Essências.
+   `/start`, `/perfil`, `/ajuda`, `/povos`, `/essencias`, and `/prismas` only. The menu
+   also offers Povos de Oniri, Essências, and Prismas.
 4. Redeploy or otherwise start a fresh invocation, then click an earlier menu's
    Meu perfil button. Confirm the same stored identity is loaded.
 5. Change the development Telegram profile and request `/perfil` again. Verify

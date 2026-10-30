@@ -92,8 +92,10 @@ Use a private conversation with the bot:
   registration or database access.
 - `/essencias` explains the eight Essences, their elements, and their Echoes without
   registration or database access.
+- `/prismas` explains the three Prisms, their linked Energies, and all their benefits
+  without registration or database access.
 
-The menu contains **Meu perfil**, **Ajuda**, **Povos de Oniri**, and **Essências**. Buttons continue
+The menu contains **Meu perfil**, **Ajuda**, **Povos de Oniri**, **Essências**, and **Prismas**. Buttons continue
 working across serverless invocations. Repeating a command keeps the same account and registration
 date; Telegram profile changes are saved on the next menu or profile access.
 Group requests direct the user to the private conversation without saving or
@@ -134,6 +136,23 @@ not save Essence choices, accumulate points, or execute combat effects.
 
 See [docs/essences-guide.md](./docs/essences-guide.md) for source provenance,
 development-bot checks, and rollback instructions.
+
+## Prisms
+
+Send `/prismas` or choose **Prismas** to consult Feiticeiro (Corpo), Ocultista
+(Mente), and Devoto (Espírito). Each page includes the full description, linked
+Energy, and all three named benefits with their complete rulebook texts.
+
+The introduction explains how linked Energy affects school-power hit chance,
+damage, and healing. Detail pages also explain the school-switch cutoff after
+learning its first power and the option to choose initial powers after character
+creation. Use **Voltar aos Prismas**, **Ver Essências**, or **Menu inicial** to
+continue browsing without saving a registration or character choice.
+
+The guide is private, stateless, and usable during database outages. It does not
+bind schools, learn powers, recommend builds, or execute Prism benefits. See
+[docs/prisms-guide.md](./docs/prisms-guide.md) for source provenance, development-bot
+checks, and rollback instructions.
 
 ## Local Setup
 

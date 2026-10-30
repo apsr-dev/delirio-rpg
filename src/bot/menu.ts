@@ -6,5 +6,7 @@ export function initialMenu() {
     .text("Ajuda", "onboarding:help")
     .row()
     .text("Povos de Oniri", "peoples:list")
-    .text("Essências", "essences:list");
+    .text("Essências", "essences:list")
+    .row()
+    .text("Prismas", "prisms:list");
 }
